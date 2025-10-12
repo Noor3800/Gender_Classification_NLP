@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gender Classification App</title>
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #d196c8, #a77cd8, #f7c0e6);
+        background-attachment: fixed;
+        text-align: center;
+        padding-top: 50px;
+        color: #4b1451;
+    }
+
+    h1 {
+        color: #570b5e;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        background: rgba(208, 180, 225, 0.95);
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(87, 11, 94, 0.2);
+        width: 500px;
+        margin: 0 auto;
+        padding: 40px;
+        backdrop-filter: blur(5px);
+    }
+
+    textarea {
+        width: 400px;
+        height: 120px;
+        font-size: 16px;
+        padding: 10px;
+        border: 2px solid #9c27b0;
+        border-radius: 10px;
+        resize: none;
+        outline: none;
+        background-color: #fdf4fb;
+        color: #4b1451;
+        transition: all 0.3s ease;
+    }
+
+    textarea:focus {
+        border-color: #d96dff;
+        box-shadow: 0 0 8px #e3a7ff;
+        background-color: #fff7fd;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 10px 25px;
+        background-color: #b936c0;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+        background-color: #7a2088;
+        transform: scale(1.05);
+    }
+
+    .result {
+        margin-top: 25px;
+        font-size: 22px;
+        color: #570b5e;
+        background: #f3e0f7;
+        padding: 10px;
+        border-radius: 8px;
+        display: inline-block;
+    }
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Gender Classification from Text</h1>
+        <form method="POST">
+            <textarea name="text" placeholder="Enter tweet or user bio..." required>{{ text if text else '' }}</textarea><br>
+            <button type="submit">Predict Gender</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            <strong>Prediction:</strong> {{ prediction }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
