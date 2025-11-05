@@ -2,9 +2,21 @@
 
 ## 🔍 Overview
 
-This project predicts the **gender of an author** based on text input using **Natural Language Processing (NLP)** and **Machine Learning**.
-It includes a **Flask web interface** for real-time predictions and is deployable using **Gunicorn**.
+A **Flask-based NLP web app** that predicts the **gender of an author** based on written text.
+The model uses a **TF-IDF vectorizer** and a **trained machine learning classifier**, integrated into an interactive web interface for real-time predictions.
 
+
+## 📦 Files
+
+```
+├── app.py              # Main Flask app
+├── model.pkl           # Trained classification model
+├── tfidf.pkl           # TF-IDF vectorizer
+├── templates/
+│   └── index.html      # Webpage template
+├── requirements.txt    # Dependencies
+└── Procfile            # For deployment (Gunicorn)
+```
 ---
 
 ## ⚙️ Tech Stack
@@ -24,8 +36,14 @@ It includes a **Flask web interface** for real-time predictions and is deployabl
 * Interactive web interface built with **Flask**.
 
 ---
+## 🚀 How to Run Locally
 
-## 🚀 How to Run
+### Clone the Repository
+
+```bash
+git clone https://github.com/Noor3800/Gender_Classification_NLP.git
+cd Gender_Classification_NLP
+```
 
 ### Install requirements
 
@@ -53,6 +71,7 @@ The app will start on:
 http://127.0.0.1:5000/
 ```
 
+open in browser and enter a sentence, click **Predict**, and see whether the model identifies it as **Male** or **Female**!
 ---
 
 ## 📊 Model Workflow
